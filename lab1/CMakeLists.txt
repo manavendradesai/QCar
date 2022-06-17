@@ -206,7 +206,7 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py
+catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py scripts/listenlaserscan.py
 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -216,7 +216,6 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
-#add_dependencies(talker lab1_generate_messages_cpp)
 
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
