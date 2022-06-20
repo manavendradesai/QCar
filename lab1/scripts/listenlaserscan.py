@@ -9,28 +9,27 @@ from std_msgs.msg import Float64
 minusnone = -1;
 
 def callback(ranges):
-	#Filter NaNs
-	filteredranges = [minusnone if (np.isnan(x) or np.isinf(x)) else x for x in ranges.ranges]
-	#rospy.loginfo(rospy.get_caller_id() + "I saw %s",filteredranges)
+	#Filter NaNs and Inf
+	mapping = {np.nan:0,np.inf:0} 
+	filteredranges = [mapping.get(x,x) for x in ranges.ranges]	
+	#rospy.loginfo(rospy.get_caller_id() + "Furthest point %s",max(filteredranges))
 	
 	#Publish max min range over two separate topics
 	pub_close = rospy.Publisher('closest_point',Float64,queue_size=10)
-	pub_far = rospy.Publisher('farthest_point',Float64,queue_size=10)
-	rate=rospy.Rate(10)
+	pub_far = rospy.Publisher('farthest_point',Float64,queue_size=1)
 
-	#while not rospy.is_shutdown():
 	minpoint = sorted(filteredranges)[0] if minusnone not in filteredranges else sorted(filteredranges)[1] 
 	maxpoint = max(filteredranges) 
-	rospy.loginfo("Closest point: %s",minpoint)
-	rospy.loginfo("Furthest point: %s",maxpoint)
-	pub_close.publish()
-	pub_far.publish()
-	rate.sleep()
+ 	#rospy.loginfo("Closest point: %s",minpoint)
+	#rospy.loginfo("Furthest point: %s", maxpoint)	
+	print('Furthest point: ', maxpoint, 'Closest point: ', minpoint)
+	pub_close.publish(minpoint)
+	pub_far.publish(maxpoint)
 
 
 def listener():
 	rospy.init_node('listenlaserscan',anonymous=True)
-	rospy.Subscriber("scan",LaserScan,callback)
+	rospy.Subscriber("/scan",LaserScan,callback)
 	rospy.spin()
 
 
