@@ -12,6 +12,13 @@ def generate_launch_description():
             parameters = [
                 {"v":1.0, "d":1.0}
             ]
+        ),
+        Node(
+            package = "lab1_cpp", 
+            executable = "relay", 
+            name = "relay",
+            output = "screen",
+            emulate_tty = True
         )
     ])
 

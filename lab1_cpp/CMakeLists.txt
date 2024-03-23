@@ -38,9 +38,16 @@ endif()
 add_executable(talker src/talker.cpp)
 ament_target_dependencies(talker rclcpp std_msgs ackermann_msgs)
 
+add_executable(relay src/relay.cpp)
+ament_target_dependencies(relay rclcpp std_msgs ackermann_msgs)
+
 install(TARGETS
   talker
-  # DIRECTORY launch
+  relay
   DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME})
 
 ament_package()
