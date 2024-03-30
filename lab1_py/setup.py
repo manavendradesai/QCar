@@ -24,6 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'talker = lab1_py.talker:main',
+            'relay = lab1_py.relay:main',
         ],
     },
 )
