@@ -1,0 +1,6 @@
+Invoking command in '/home/manavendra/ros2_ws/src/build/lab2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/manavendra/ros2_ws/src/lab2 -DCMAKE_INSTALL_PREFIX=/home/manavendra/ros2_ws/src/install/lab2
+Invoked command in '/home/manavendra/ros2_ws/src/build/lab2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/manavendra/ros2_ws/src/lab2 -DCMAKE_INSTALL_PREFIX=/home/manavendra/ros2_ws/src/install/lab2
+Invoking command in '/home/manavendra/ros2_ws/src/build/lab2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/manavendra/ros2_ws/src/build/lab2 -- -j8 -l8
+Invoked command in '/home/manavendra/ros2_ws/src/build/lab2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/manavendra/ros2_ws/src/build/lab2 -- -j8 -l8
+Invoking command in '/home/manavendra/ros2_ws/src/build/lab2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/manavendra/ros2_ws/src/build/lab2
+Invoked command in '/home/manavendra/ros2_ws/src/build/lab2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/manavendra/ros2_ws/src/build/lab2
