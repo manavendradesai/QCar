@@ -2,6 +2,10 @@
 
 #include <memory>
 #include <cmath>
+#include <chrono>
+#include <functional>
+#include <memory>
+#include <string>
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
@@ -22,6 +26,7 @@ class AEB : public rclcpp::Node
         float laserangle_min;
         float laserangle_inc;
         bool flag_laser;
+        double TTC_cr;
 
         // Constructor and name node
         AEB()
@@ -30,6 +35,9 @@ class AEB : public rclcpp::Node
 
             // Initialize variables
             flag_laser = false;
+
+            //Declare parameters with defaults
+            this->declare_parameter("TTC_cr",2.0);
 
             auto default_qos = rclcpp::QoS(rclcpp::SystemDefaultsQoS());
 
@@ -63,9 +71,6 @@ class AEB : public rclcpp::Node
           // Filter laser scan for nans
           std::replace_if(laserrange.begin(), laserrange.end(), [](float x) { return std::isnan(x); }, msg->range_max); 
 
-          // // Print
-          // RCLCPP_INFO(this->get_logger(), "Laserangle min : %f", laserangle_min);
-
           // Set flag to true
           flag_laser = true;
 
@@ -79,9 +84,11 @@ class AEB : public rclcpp::Node
           // Collect vx
           double vx = msg->twist.twist.linear.x;
 
-          // Print
-          RCLCPP_INFO(this->get_logger(), "vx: %f", vx);
-
+          // // Publish
+          // RCLCPP_INFO(this->get_logger(), "vx: %f",vx);
+      
+          // Collect critical time-to-collision-threshold
+          TTC_cr = (this->get_parameter("TTC_cr")).as_double();
 
           // Execute only if filtered laser scan is received
           if (flag_laser){
@@ -97,15 +104,18 @@ class AEB : public rclcpp::Node
             
             }
 
+            // // Publish
+            // RCLCPP_INFO(this->get_logger(), "min_iTTc: %f",min_iTTc);
+
             // Determine if AEB is necessary
-            if (min_iTTc<1){
+            if (min_iTTc<TTC_cr){
 
               // Publish brakes
               auto message = ackermann_msgs::msg::AckermannDriveStamped();
               message.drive.speed = 0;
 
               // Publish
-              RCLCPP_INFO(this->get_logger(), "Applying AEB!!");
+              RCLCPP_INFO(this->get_logger(), "AEB applied!!");
               publisher_->publish(message);
 
             }
