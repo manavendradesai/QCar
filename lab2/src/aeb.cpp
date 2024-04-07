@@ -1,6 +1,7 @@
 // Implement automatic emergency braking using the instantaneous time to collision threshold
 
 #include <memory>
+#include <cmath>
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
@@ -18,6 +19,8 @@ class AEB : public rclcpp::Node
 
         // Declare variables
         std::vector<float> laserrange;
+        float laserangle_min;
+        float laserangle_inc;
         bool flag_laser;
 
         // Constructor and name node
@@ -26,7 +29,6 @@ class AEB : public rclcpp::Node
         {
 
             // Initialize variables
-            // laserrange = {0};
             flag_laser = false;
 
             auto default_qos = rclcpp::QoS(rclcpp::SystemDefaultsQoS());
@@ -50,19 +52,19 @@ class AEB : public rclcpp::Node
         {
           // Receive scan
           laserrange = msg->ranges;
+          laserangle_min = msg->angle_min;
+          laserangle_inc = msg->angle_increment;
 
-          // Filter laser scan for nans and inf
-
+          // Filter laser scan for inf
           std::replace(laserrange.begin(),laserrange.end(),
           std::numeric_limits<float>::infinity(),
           msg->range_max);
-          
-          std::replace(laserrange.begin(),laserrange.end(),
-          std::numeric_limits<float>::quiet_NaN(),
-          msg->range_max);
+
+          // Filter laser scan for nans
+          std::replace_if(laserrange.begin(), laserrange.end(), [](float x) { return std::isnan(x); }, msg->range_max); 
 
           // // Print
-          // RCLCPP_INFO(this->get_logger(), "Laser ranges: %f", laserrange[0]);
+          // RCLCPP_INFO(this->get_logger(), "Laserangle min : %f", laserangle_min);
 
           // Set flag to true
           flag_laser = true;
@@ -80,14 +82,35 @@ class AEB : public rclcpp::Node
           // Print
           RCLCPP_INFO(this->get_logger(), "vx: %f", vx);
 
-          // // Execute only if filtered laser scan is received
-          // if (flag_laser){
 
-          // // Calculate instantaneous time-to-collision
+          // Execute only if filtered laser scan is received
+          if (flag_laser){
 
+            float min_iTTc = 100;
+            
+            // Calculate instantaneous time-to-collision
+            for (unsigned int i=0;i<laserrange.size();i++){
+              
+              float iTTc = laserrange[i]/(std::max(0.001,vx*cos(laserangle_min+i*laserangle_inc)));
 
-          // // Determine if AEB is necessary
-          // }
+              min_iTTc = std::min(min_iTTc,iTTc);      
+            
+            }
+
+            // Determine if AEB is necessary
+            if (min_iTTc<1){
+
+              // Publish brakes
+              auto message = ackermann_msgs::msg::AckermannDriveStamped();
+              message.drive.speed = 0;
+
+              // Publish
+              RCLCPP_INFO(this->get_logger(), "Applying AEB!!");
+              publisher_->publish(message);
+
+            }
+
+          }
 
         }
 
