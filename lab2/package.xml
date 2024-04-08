@@ -8,7 +8,11 @@
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
   <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  
   <depend>ackermann_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>nav_msgs</depend>

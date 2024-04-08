@@ -17,6 +17,7 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(ackermann_msgs REQUIRED)
@@ -37,15 +38,30 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+# Include Cpp "include" directory
+include_directories(include)
+
+# Create Cpp executable
 add_executable(aeb src/aeb.cpp)
 ament_target_dependencies(aeb rclcpp std_msgs ackermann_msgs sensor_msgs nav_msgs)
 
+# Install Cpp executables
 install(TARGETS
   aeb
   DESTINATION lib/${PROJECT_NAME})
 
+# Install launch folder
 install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME})
+
+# Install Python modules
+ament_python_install_package(${PROJECT_NAME})
+
+# # Install Python executables
+# install(PROGRAMS
+#   scripts/py_node.py
+#   DESTINATION lib/${PROJECT_NAME}
+# )
 
 ament_package()

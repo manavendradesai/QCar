@@ -118,6 +118,9 @@ class AEB : public rclcpp::Node
               RCLCPP_INFO(this->get_logger(), "AEB applied!!");
               publisher_->publish(message);
 
+              // Reset flag
+              flag_laser = false;
+
             }
 
           }
