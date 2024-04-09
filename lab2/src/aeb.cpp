@@ -112,16 +112,16 @@ class AEB : public rclcpp::Node
 
               // Publish brakes
               auto message = ackermann_msgs::msg::AckermannDriveStamped();
-              message.drive.speed = 0;
+              message.drive.speed = 0.0;
 
               // Publish
               RCLCPP_INFO(this->get_logger(), "AEB applied!!");
               publisher_->publish(message);
 
-              // Reset flag
-              flag_laser = false;
-
             }
+
+            // Reset flag
+            flag_laser = false;
 
           }
 

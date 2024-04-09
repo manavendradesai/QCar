@@ -50,18 +50,18 @@ install(TARGETS
   aeb
   DESTINATION lib/${PROJECT_NAME})
 
+# Install Python modules
+ament_python_install_package(${PROJECT_NAME})
+
+# Install Python executables
+install(PROGRAMS
+  scripts/aeb.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 # Install launch folder
 install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME})
-
-# Install Python modules
-ament_python_install_package(${PROJECT_NAME})
-
-# # Install Python executables
-# install(PROGRAMS
-#   scripts/py_node.py
-#   DESTINATION lib/${PROJECT_NAME}
-# )
 
 ament_package()
