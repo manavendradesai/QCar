@@ -13,6 +13,12 @@
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 
+// #include "geometry_msgs/msg/point_stamped.hpp"
+// #include "tf2_geometry_msgs/tf2_geometry_msgs.h"
+// #include "tf2_ros/transform_listener.h"
+// #include "tf2_ros/buffer.h"
+// #include "tf2/exceptions.h"
+
 using std::placeholders::_1;
 
 // Node class
@@ -27,6 +33,12 @@ class AEB : public rclcpp::Node
         float laserangle_inc;
         bool flag_laser;
         double TTC_cr;
+        double laserangle;
+        double xcc;
+        double ycc;
+        std::string fromFrameRel = "ego_racecar/laser_model";
+        std::string toFrameRel = "car_center";
+        // geometry_msgs::msg::PointStamped point_ray;
 
         // Constructor and name node
         AEB()
@@ -49,6 +61,13 @@ class AEB : public rclcpp::Node
 
             // Declare publisher for ackermann_msgs
             publisher_ = this->create_publisher<ackermann_msgs::msg::AckermannDriveStamped>("drive",10);
+
+            // Transform listerners
+            // tf_buffer_ = std::make_unique<tf2_ros::Buffer>(this->get_clock());
+            // tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
+
+            // std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+            // std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
 
         }
 
@@ -97,8 +116,46 @@ class AEB : public rclcpp::Node
             
             // Calculate instantaneous time-to-collision
             for (unsigned int i=0;i<laserrange.size();i++){
+
+              // Transform ranges to car_center frame
+              laserangle = laserangle_min+i*laserangle_inc;
               
-              float iTTc = laserrange[i]/(std::max(0.001,vx*cos(laserangle_min+i*laserangle_inc)));
+              // // Coordinates in laser_model frame
+              // xcc = laserrange[i]*cos(laserangle);
+              // ycc = laserrange[i]*sin(laserangle);
+
+              // // Create Point Stamped message
+              // point_ray.header.stamp = this->get_clock()->now();
+              // point_ray.header.frame_id = fromFrameRel;
+              // point_ray.point.x = xcc;
+              // point_ray.point.y = ycc;
+              // point_ray.point.z = 0.0;
+
+              // // Retrieve transforms
+              // try {
+              //   // tf_buffer_->transform(point_ray, point_ray, toFrameRel);
+
+
+              //   RCLCPP_INFO(
+              //     this->get_logger(), "Point laser ray in frame of car_center: x:%f y:%f z:%f\n",
+              //     point_ray.point.x,
+              //     point_ray.point.y,
+              //     point_ray.point.z);
+              // } catch (const tf2::TransformException & ex) {
+              //   RCLCPP_WARN(
+              //     // Print exception which was caught
+              //     this->get_logger(), "Unable to transform %s\n", ex.what());
+              //     }
+
+              // // Retrieve points from PointStampedMessage
+              // xcc = point_ray.point.x;
+              // ycc = point_ray.point.y;
+
+              // // Revise range and polar angle in car_center frame
+              // laserrange[i] = sqrt(xcc*xcc + ycc*ycc);
+              // laserangle = atan2(ycc,xcc); 
+              
+              float iTTc = laserrange[i]/(std::max(0.001,vx*cos(laserangle)));
 
               min_iTTc = std::min(min_iTTc,iTTc);      
             
@@ -130,6 +187,9 @@ class AEB : public rclcpp::Node
         rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr subscription_laser_;
         rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr subscription_odom_;
         rclcpp::Publisher<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr publisher_;
+
+        // std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+        // std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
 
 };
 
