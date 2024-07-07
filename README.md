@@ -5,4 +5,4 @@ Learning to build a perception-planning-control robotics stack on an F1TENTH QCa
    ![](https://github.com/manavendradesai/QCar/blob/main/gifs/aeb.gif)
 
 2) Wall following using LiDAR scans and PID steering control
-   ![](https://github.com/manavendradesai/QCar/blob/main/gifs/wall_follow.mp4)
+   ![](https://github.com/manavendradesai/QCar/blob/main/gifs/wall_follow.gif)
