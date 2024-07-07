@@ -34,7 +34,7 @@ class WallFollow(Node):
         # PID gains
         self.kp = 0.5
         self.kd = 5
-        self.ki = 0
+        # self.ki = 0
 
         # Error history
         # self.integral =
@@ -118,6 +118,10 @@ class WallFollow(Node):
 
         # PID steering angle (in radians)
         pid_steer = -self.kp*self.pres_error - self.kd*(self.pres_error - self.prev_error)
+
+        # Limit the steering angle to 25 degrees
+        pid_steer = min(25*np.pi/180, pid_steer)
+        pid_steer = max(-25*np.pi/180, pid_steer)
 
         # print('PID steering (in rad): ', pid_steer)
 
