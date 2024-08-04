@@ -18,6 +18,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(ackermann_msgs REQUIRED)
@@ -39,6 +40,15 @@ endif()
 
 # Include Cpp "include" directory
 include_directories(include)
+
+# Create Cpp executable
+add_executable(wall_follow src/wall_follow.cpp)
+ament_target_dependencies(wall_follow rclcpp std_msgs ackermann_msgs sensor_msgs)
+
+# Install Cpp executables
+install(TARGETS
+  wall_follow
+  DESTINATION lib/${PROJECT_NAME})
 
 # Install Python modules
 ament_python_install_package(${PROJECT_NAME})
