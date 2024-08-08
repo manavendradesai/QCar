@@ -1,0 +1,9 @@
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/install/strip.dir
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/install/local.dir
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/install.dir
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/list_install_components.dir
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/rebuild_cache.dir
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/edit_cache.dir
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/test.dir
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/lab4_uninstall.dir
+/home/manavendra/ros2_ws/src/build/lab4/CMakeFiles/uninstall.dir

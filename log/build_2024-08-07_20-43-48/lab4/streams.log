@@ -1,0 +1,84 @@
+[0.330s] Invoking command in '/home/manavendra/ros2_ws/src/build/lab4': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/manavendra/ros2_ws/src/lab4 -DCMAKE_INSTALL_PREFIX=/home/manavendra/ros2_ws/src/install/lab4
+[0.400s] -- The C compiler identification is GNU 9.4.0
+[0.467s] -- The CXX compiler identification is GNU 9.4.0
+[0.477s] -- Check for working C compiler: /usr/bin/cc
+[0.581s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.582s] -- Detecting C compiler ABI info
+[0.685s] -- Detecting C compiler ABI info - done
+[0.711s] -- Detecting C compile features
+[0.712s] -- Detecting C compile features - done
+[0.718s] -- Check for working CXX compiler: /usr/bin/c++
+[0.849s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.851s] -- Detecting CXX compiler ABI info
+[0.964s] -- Detecting CXX compiler ABI info - done
+[0.987s] -- Detecting CXX compile features
+[0.988s] -- Detecting CXX compile features - done
+[0.992s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[1.021s] -- Found PythonInterp: /home/manavendra/miniconda3/bin/python3 (found suitable version "3.11.4", minimum required is "3") 
+[1.022s] -- Using PYTHON_EXECUTABLE: /home/manavendra/miniconda3/bin/python3
+[1.256s] -- Found std_msgs: 2.0.5 (/opt/ros/foxy/share/std_msgs/cmake)
+[1.292s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.300s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.408s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.463s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.574s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.637s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[1.693s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.696s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.697s] -- Looking for pthread.h
+[1.782s] -- Looking for pthread.h - found
+[1.782s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.887s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.887s] -- Looking for pthread_create in pthreads
+[1.957s] -- Looking for pthread_create in pthreads - not found
+[1.957s] -- Looking for pthread_create in pthread
+[2.043s] -- Looking for pthread_create in pthread - found
+[2.044s] -- Found Threads: TRUE  
+[2.211s] -- Found rclpy: 1.0.13 (/opt/ros/foxy/share/rclpy/cmake)
+[2.213s] -- Found ackermann_msgs: 2.0.2 (/opt/ros/foxy/share/ackermann_msgs/cmake)
+[2.251s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[2.396s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[2.905s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.908s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.908s] -- Configured cppcheck include dirs: /home/manavendra/ros2_ws/src/lab4/include
+[2.908s] -- Configured cppcheck exclude dirs and/or files: 
+[2.909s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.909s] -- Configured cpplint exclude dirs and/or files: 
+[2.911s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.911s] -- Added test 'lint_cmake' to check CMake code style
+[2.911s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[2.912s] -- Added test 'uncrustify' to check C / C++ code style
+[2.912s] -- Configured uncrustify additional arguments: 
+[2.913s] -- Added test 'xmllint' to check XML markup files
+[2.917s] -- Configuring done
+[2.919s] -- Generating done
+[2.921s] -- Build files have been written to: /home/manavendra/ros2_ws/src/build/lab4
+[2.932s] Invoked command in '/home/manavendra/ros2_ws/src/build/lab4' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/manavendra/ros2_ws/src/lab4 -DCMAKE_INSTALL_PREFIX=/home/manavendra/ros2_ws/src/install/lab4
+[2.935s] Invoking command in '/home/manavendra/ros2_ws/src/build/lab4': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/manavendra/ros2_ws/src/build/lab4 -- -j8 -l8
+[2.984s] Invoked command in '/home/manavendra/ros2_ws/src/build/lab4' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/manavendra/ros2_ws/src/build/lab4 -- -j8 -l8
+[3.024s] Invoking command in '/home/manavendra/ros2_ws/src/build/lab4': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/manavendra/ros2_ws/src/build/lab4
+[3.034s] -- Install configuration: ""
+[3.034s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/environment/pythonpath.sh
+[3.035s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/environment/pythonpath.dsv
+[3.035s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/lib/python3.11/site-packages/lab4
+[3.035s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/lib/python3.11/site-packages/lab4/__init__.py
+[3.069s] Listing '/home/manavendra/ros2_ws/src/install/lab4/lib/python3.11/site-packages/lab4'...
+[3.069s] Compiling '/home/manavendra/ros2_ws/src/install/lab4/lib/python3.11/site-packages/lab4/__init__.py'...
+[3.077s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/lib/lab4/gap_follow.py
+[3.077s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/launch
+[3.077s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/ament_index/resource_index/package_run_dependencies/lab4
+[3.078s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/ament_index/resource_index/parent_prefix_path/lab4
+[3.078s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/environment/ament_prefix_path.sh
+[3.078s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/environment/ament_prefix_path.dsv
+[3.078s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/environment/path.sh
+[3.079s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/environment/path.dsv
+[3.079s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/local_setup.bash
+[3.079s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/local_setup.sh
+[3.079s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/local_setup.zsh
+[3.080s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/local_setup.dsv
+[3.080s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/package.dsv
+[3.080s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/ament_index/resource_index/packages/lab4
+[3.081s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/cmake/lab4Config.cmake
+[3.081s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/cmake/lab4Config-version.cmake
+[3.081s] -- Installing: /home/manavendra/ros2_ws/src/install/lab4/share/lab4/package.xml
+[3.084s] Invoked command in '/home/manavendra/ros2_ws/src/build/lab4' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/manavendra/ros2_ws/src/build/lab4

@@ -1,0 +1,42 @@
+[1.103s] Invoking command in '/home/manavendra/ros2_ws/src/lab1_py': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/manavendra/ros2_ws/src/build/lab1_py/prefix_override:/home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/lab1_py build --build-base /home/manavendra/ros2_ws/src/build/lab1_py/build install --record /home/manavendra/ros2_ws/src/build/lab1_py/install.log --install-scripts $base/lib/lab1_py --single-version-externally-managed install_data
+[1.459s] running egg_info
+[1.460s] creating ../build/lab1_py/lab1_py.egg-info
+[1.460s] writing ../build/lab1_py/lab1_py.egg-info/PKG-INFO
+[1.461s] writing dependency_links to ../build/lab1_py/lab1_py.egg-info/dependency_links.txt
+[1.461s] writing entry points to ../build/lab1_py/lab1_py.egg-info/entry_points.txt
+[1.461s] writing requirements to ../build/lab1_py/lab1_py.egg-info/requires.txt
+[1.461s] writing top-level names to ../build/lab1_py/lab1_py.egg-info/top_level.txt
+[1.464s] writing manifest file '../build/lab1_py/lab1_py.egg-info/SOURCES.txt'
+[1.528s] reading manifest file '../build/lab1_py/lab1_py.egg-info/SOURCES.txt'
+[1.529s] writing manifest file '../build/lab1_py/lab1_py.egg-info/SOURCES.txt'
+[1.529s] running build
+[1.529s] running build_py
+[1.530s] creating /home/manavendra/ros2_ws/src/build/lab1_py/build
+[1.530s] creating /home/manavendra/ros2_ws/src/build/lab1_py/build/lib
+[1.530s] creating /home/manavendra/ros2_ws/src/build/lab1_py/build/lib/lab1_py
+[1.530s] copying lab1_py/__init__.py -> /home/manavendra/ros2_ws/src/build/lab1_py/build/lib/lab1_py
+[1.530s] copying lab1_py/relay.py -> /home/manavendra/ros2_ws/src/build/lab1_py/build/lib/lab1_py
+[1.530s] copying lab1_py/talker.py -> /home/manavendra/ros2_ws/src/build/lab1_py/build/lib/lab1_py
+[1.530s] running install
+[1.531s] running install_lib
+[1.533s] creating /home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages/lab1_py
+[1.534s] copying /home/manavendra/ros2_ws/src/build/lab1_py/build/lib/lab1_py/__init__.py -> /home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages/lab1_py
+[1.534s] copying /home/manavendra/ros2_ws/src/build/lab1_py/build/lib/lab1_py/relay.py -> /home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages/lab1_py
+[1.534s] copying /home/manavendra/ros2_ws/src/build/lab1_py/build/lib/lab1_py/talker.py -> /home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages/lab1_py
+[1.534s] byte-compiling /home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages/lab1_py/__init__.py to __init__.cpython-38.pyc
+[1.537s] byte-compiling /home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages/lab1_py/relay.py to relay.cpython-38.pyc
+[1.537s] byte-compiling /home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages/lab1_py/talker.py to talker.cpython-38.pyc
+[1.538s] running install_data
+[1.538s] creating /home/manavendra/ros2_ws/src/install/lab1_py/share/ament_index
+[1.538s] creating /home/manavendra/ros2_ws/src/install/lab1_py/share/ament_index/resource_index
+[1.538s] creating /home/manavendra/ros2_ws/src/install/lab1_py/share/ament_index/resource_index/packages
+[1.538s] copying resource/lab1_py -> /home/manavendra/ros2_ws/src/install/lab1_py/share/ament_index/resource_index/packages
+[1.538s] copying package.xml -> /home/manavendra/ros2_ws/src/install/lab1_py/share/lab1_py
+[1.539s] copying launch/lab1_launch.py -> /home/manavendra/ros2_ws/src/install/lab1_py/share/lab1_py
+[1.539s] running install_egg_info
+[1.541s] Copying ../build/lab1_py/lab1_py.egg-info to /home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages/lab1_py-0.0.0-py3.8.egg-info
+[1.542s] running install_scripts
+[1.560s] Installing relay script to /home/manavendra/ros2_ws/src/install/lab1_py/lib/lab1_py
+[1.560s] Installing talker script to /home/manavendra/ros2_ws/src/install/lab1_py/lib/lab1_py
+[1.561s] writing list of installed files to '/home/manavendra/ros2_ws/src/build/lab1_py/install.log'
+[1.584s] Invoked command in '/home/manavendra/ros2_ws/src/lab1_py' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/manavendra/ros2_ws/src/build/lab1_py/prefix_override:/home/manavendra/ros2_ws/src/install/lab1_py/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/lab1_py build --build-base /home/manavendra/ros2_ws/src/build/lab1_py/build install --record /home/manavendra/ros2_ws/src/build/lab1_py/install.log --install-scripts $base/lib/lab1_py --single-version-externally-managed install_data

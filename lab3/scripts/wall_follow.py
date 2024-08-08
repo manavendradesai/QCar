@@ -77,7 +77,7 @@ class WallFollow(Node):
             self.pid_control()
 
 
-    # Helper functin to get laserscan range for given angle
+    # Helper function to get laserscan range for given angle
     def get_range(self,laserrange,angle):
 
         # Run only if laserscan is received and filtered

@@ -1,0 +1,93 @@
+[0.333s] Invoking command in '/home/manavendra/ros2_ws/src/build/lab2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/manavendra/ros2_ws/src/lab2 -DCMAKE_INSTALL_PREFIX=/home/manavendra/ros2_ws/src/install/lab2
+[0.401s] -- The C compiler identification is GNU 9.4.0
+[0.474s] -- The CXX compiler identification is GNU 9.4.0
+[0.480s] -- Check for working C compiler: /usr/bin/cc
+[0.594s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.594s] -- Detecting C compiler ABI info
+[0.701s] -- Detecting C compiler ABI info - done
+[0.724s] -- Detecting C compile features
+[0.725s] -- Detecting C compile features - done
+[0.729s] -- Check for working CXX compiler: /usr/bin/c++
+[0.840s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.842s] -- Detecting CXX compiler ABI info
+[0.961s] -- Detecting CXX compiler ABI info - done
+[0.983s] -- Detecting CXX compile features
+[0.984s] -- Detecting CXX compile features - done
+[0.986s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[1.015s] -- Found PythonInterp: /home/manavendra/miniconda3/bin/python3 (found suitable version "3.11.4", minimum required is "3") 
+[1.016s] -- Using PYTHON_EXECUTABLE: /home/manavendra/miniconda3/bin/python3
+[1.313s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[1.368s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.375s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.476s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.513s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.614s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.676s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.678s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.679s] -- Looking for pthread.h
+[1.768s] -- Looking for pthread.h - found
+[1.768s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.872s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.872s] -- Looking for pthread_create in pthreads
+[1.947s] -- Looking for pthread_create in pthreads - not found
+[1.947s] -- Looking for pthread_create in pthread
+[2.033s] -- Looking for pthread_create in pthread - found
+[2.034s] -- Found Threads: TRUE  
+[2.221s] -- Found rclpy: 1.0.13 (/opt/ros/foxy/share/rclpy/cmake)
+[2.223s] -- Found ackermann_msgs: 2.0.2 (/opt/ros/foxy/share/ackermann_msgs/cmake)
+[2.264s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[2.417s] -- Found nav_msgs: 2.0.5 (/opt/ros/foxy/share/nav_msgs/cmake)
+[2.512s] -- Found tf2: 0.13.14 (/opt/ros/foxy/share/tf2/cmake)
+[2.535s] -- Found tf2_ros: 0.13.14 (/opt/ros/foxy/share/tf2_ros/cmake)
+[3.030s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[3.394s] -- Added test 'copyright' to check source files copyright and LICENSE
+[3.396s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.397s] -- Configured cppcheck include dirs: /home/manavendra/ros2_ws/src/lab2/include
+[3.397s] -- Configured cppcheck exclude dirs and/or files: 
+[3.399s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[3.399s] -- Configured cpplint exclude dirs and/or files: 
+[3.400s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.401s] -- Added test 'lint_cmake' to check CMake code style
+[3.402s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[3.404s] -- Added test 'uncrustify' to check C / C++ code style
+[3.404s] -- Configured uncrustify additional arguments: 
+[3.405s] -- Added test 'xmllint' to check XML markup files
+[3.411s] -- Configuring done
+[3.438s] -- Generating done
+[3.441s] -- Build files have been written to: /home/manavendra/ros2_ws/src/build/lab2
+[3.456s] Invoked command in '/home/manavendra/ros2_ws/src/build/lab2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/manavendra/ros2_ws/src/lab2 -DCMAKE_INSTALL_PREFIX=/home/manavendra/ros2_ws/src/install/lab2
+[3.459s] Invoking command in '/home/manavendra/ros2_ws/src/build/lab2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/manavendra/ros2_ws/src/build/lab2 -- -j8 -l8
+[3.509s] [35m[1mScanning dependencies of target aeb[0m
+[3.561s] [ 50%] [32mBuilding CXX object CMakeFiles/aeb.dir/src/aeb.cpp.o[0m
+[10.688s] [100%] [32m[1mLinking CXX executable aeb[0m
+[11.082s] [100%] Built target aeb
+[11.093s] Invoked command in '/home/manavendra/ros2_ws/src/build/lab2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/manavendra/ros2_ws/src/build/lab2 -- -j8 -l8
+[11.122s] Invoking command in '/home/manavendra/ros2_ws/src/build/lab2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/manavendra/ros2_ws/src/build/lab2
+[11.130s] -- Install configuration: ""
+[11.131s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/lib/lab2/aeb
+[11.133s] -- Set runtime path of "/home/manavendra/ros2_ws/src/install/lab2/lib/lab2/aeb" to ""
+[11.134s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/environment/pythonpath.sh
+[11.134s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/environment/pythonpath.dsv
+[11.134s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/lib/python3.11/site-packages/lab2
+[11.134s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/lib/python3.11/site-packages/lab2/__init__.py
+[11.165s] Listing '/home/manavendra/ros2_ws/src/install/lab2/lib/python3.11/site-packages/lab2'...
+[11.165s] Compiling '/home/manavendra/ros2_ws/src/install/lab2/lib/python3.11/site-packages/lab2/__init__.py'...
+[11.170s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/lib/lab2/aeb.py
+[11.170s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/launch
+[11.170s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/launch/lab2_aeb.py
+[11.170s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/ament_index/resource_index/package_run_dependencies/lab2
+[11.171s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/ament_index/resource_index/parent_prefix_path/lab2
+[11.171s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/environment/ament_prefix_path.sh
+[11.171s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/environment/ament_prefix_path.dsv
+[11.171s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/environment/path.sh
+[11.171s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/environment/path.dsv
+[11.172s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/local_setup.bash
+[11.172s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/local_setup.sh
+[11.172s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/local_setup.zsh
+[11.172s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/local_setup.dsv
+[11.172s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/package.dsv
+[11.172s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/ament_index/resource_index/packages/lab2
+[11.172s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/cmake/lab2Config.cmake
+[11.173s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/cmake/lab2Config-version.cmake
+[11.173s] -- Installing: /home/manavendra/ros2_ws/src/install/lab2/share/lab2/package.xml
+[11.175s] Invoked command in '/home/manavendra/ros2_ws/src/build/lab2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/manavendra/ros2_ws/src/build/lab2
