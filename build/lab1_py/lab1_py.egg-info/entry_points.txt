@@ -1,4 +1,0 @@
-[console_scripts]
-relay = lab1_py.relay:main
-talker = lab1_py.talker:main
-
