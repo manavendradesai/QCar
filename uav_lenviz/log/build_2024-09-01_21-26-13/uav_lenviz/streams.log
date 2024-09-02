@@ -1,0 +1,95 @@
+[0.016s] Invoking command in '/home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/manavendra/ros2_ws/install/lab1_py:/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/manavendra/ros2_ws/src/uav_lenviz -DCMAKE_INSTALL_PREFIX=/home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz
+[0.137s] -- The C compiler identification is GNU 9.4.0
+[0.197s] -- The CXX compiler identification is GNU 9.4.0
+[0.203s] -- Check for working C compiler: /usr/bin/cc
+[0.279s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.281s] -- Detecting C compiler ABI info
+[0.359s] -- Detecting C compiler ABI info - done
+[0.375s] -- Detecting C compile features
+[0.375s] -- Detecting C compile features - done
+[0.379s] -- Check for working CXX compiler: /usr/bin/c++
+[0.474s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.476s] -- Detecting CXX compiler ABI info
+[0.594s] -- Detecting CXX compiler ABI info - done
+[0.617s] -- Detecting CXX compile features
+[0.618s] -- Detecting CXX compile features - done
+[0.628s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.651s] -- Found PythonInterp: /home/manavendra/miniconda3/bin/python3 (found suitable version "3.11.4", minimum required is "3") 
+[0.651s] -- Using PYTHON_EXECUTABLE: /home/manavendra/miniconda3/bin/python3
+[0.852s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.917s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.928s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.041s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.085s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.220s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.289s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.291s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.299s] -- Looking for pthread.h
+[1.378s] -- Looking for pthread.h - found
+[1.378s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.460s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.460s] -- Check if compiler accepts -pthread
+[1.547s] -- Check if compiler accepts -pthread - yes
+[1.548s] -- Found Threads: TRUE  
+[1.742s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[1.850s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.857s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.857s] -- Configured cppcheck include dirs: /home/manavendra/ros2_ws/src/uav_lenviz/include/uav_lenviz
+[1.857s] -- Configured cppcheck exclude dirs and/or files: 
+[1.864s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.864s] -- Configured cpplint exclude dirs and/or files: 
+[1.865s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.867s] -- Added test 'lint_cmake' to check CMake code style
+[1.868s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[1.874s] -- Added test 'uncrustify' to check C / C++ code style
+[1.874s] -- Configured uncrustify additional arguments: 
+[1.875s] -- Added test 'xmllint' to check XML markup files
+[1.879s] -- Configuring done
+[1.892s] -- Generating done
+[1.894s] -- Build files have been written to: /home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz
+[1.902s] Invoked command in '/home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/manavendra/ros2_ws/install/lab1_py:/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/manavendra/ros2_ws/src/uav_lenviz -DCMAKE_INSTALL_PREFIX=/home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz
+[1.905s] Invoking command in '/home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/manavendra/ros2_ws/install/lab1_py:/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz -- -j8 -l8
+[1.950s] [35m[1mScanning dependencies of target drone_operation[0m
+[1.950s] [35m[1mScanning dependencies of target mission_plan[0m
+[1.950s] [35m[1mScanning dependencies of target survey[0m
+[1.993s] [ 16%] [32mBuilding CXX object CMakeFiles/drone_operation.dir/src/drone_operation.cpp.o[0m
+[1.993s] [ 33%] [32mBuilding CXX object CMakeFiles/survey.dir/src/survey.cpp.o[0m
+[2.000s] [ 50%] [32mBuilding CXX object CMakeFiles/mission_plan.dir/src/mission_plan.cpp.o[0m
+[4.088s] [ 66%] [32m[1mLinking CXX executable drone_operation[0m
+[4.246s] [ 66%] Built target drone_operation
+[6.611s] [ 83%] [32m[1mLinking CXX executable mission_plan[0m
+[6.852s] [ 83%] Built target mission_plan
+[7.495s] [100%] [32m[1mLinking CXX executable survey[0m
+[7.770s] [100%] Built target survey
+[7.781s] Invoked command in '/home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/manavendra/ros2_ws/install/lab1_py:/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz -- -j8 -l8
+[7.826s] Invoking command in '/home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/manavendra/ros2_ws/install/lab1_py:/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz
+[7.835s] -- Install configuration: ""
+[7.835s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/drone_operation
+[7.836s] -- Set runtime path of "/home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/drone_operation" to ""
+[7.836s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/mission_plan
+[7.837s] -- Set runtime path of "/home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/mission_plan" to ""
+[7.837s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/survey
+[7.840s] -- Set runtime path of "/home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/survey" to ""
+[7.840s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch
+[7.840s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_5.py
+[7.840s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_lenviz.py
+[7.840s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_3.py
+[7.840s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_4.py
+[7.840s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_1.py
+[7.841s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_2.py
+[7.841s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/package_run_dependencies/uav_lenviz
+[7.841s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/parent_prefix_path/uav_lenviz
+[7.841s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/ament_prefix_path.sh
+[7.841s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/ament_prefix_path.dsv
+[7.842s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/path.sh
+[7.842s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/path.dsv
+[7.842s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.bash
+[7.842s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.sh
+[7.842s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.zsh
+[7.843s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.dsv
+[7.843s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/package.dsv
+[7.843s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/packages/uav_lenviz
+[7.844s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/cmake/uav_lenvizConfig.cmake
+[7.844s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/cmake/uav_lenvizConfig-version.cmake
+[7.844s] -- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/package.xml
+[7.847s] Invoked command in '/home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/manavendra/ros2_ws/install/lab1_py:/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz

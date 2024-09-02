@@ -1,0 +1,29 @@
+[100%] Built target survey
+[100%] Built target mission_plan
+[100%] Built target drone_operation
+-- Install configuration: ""
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/drone_operation
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/mission_plan
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/survey
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_5.py
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_lenviz.py
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_3.py
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_4.py
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_1.py
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_2.py
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/package_run_dependencies/uav_lenviz
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/parent_prefix_path/uav_lenviz
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/ament_prefix_path.sh
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/path.sh
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/path.dsv
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.bash
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.sh
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.zsh
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.dsv
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/package.dsv
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/packages/uav_lenviz
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/cmake/uav_lenvizConfig.cmake
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/cmake/uav_lenvizConfig-version.cmake
+-- Up-to-date: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/package.xml

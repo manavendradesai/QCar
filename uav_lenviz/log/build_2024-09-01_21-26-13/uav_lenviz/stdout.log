@@ -1,0 +1,89 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /home/manavendra/miniconda3/bin/python3 (found suitable version "3.11.4", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /home/manavendra/miniconda3/bin/python3
+-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+-- Found FastRTPS: /opt/ros/foxy/include  
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/manavendra/ros2_ws/src/uav_lenviz/include/uav_lenviz
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/manavendra/ros2_ws/src/uav_lenviz/build/uav_lenviz
+[35m[1mScanning dependencies of target drone_operation[0m
+[35m[1mScanning dependencies of target mission_plan[0m
+[35m[1mScanning dependencies of target survey[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/drone_operation.dir/src/drone_operation.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/survey.dir/src/survey.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/mission_plan.dir/src/mission_plan.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable drone_operation[0m
+[ 66%] Built target drone_operation
+[ 83%] [32m[1mLinking CXX executable mission_plan[0m
+[ 83%] Built target mission_plan
+[100%] [32m[1mLinking CXX executable survey[0m
+[100%] Built target survey
+-- Install configuration: ""
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/drone_operation
+-- Set runtime path of "/home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/drone_operation" to ""
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/mission_plan
+-- Set runtime path of "/home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/mission_plan" to ""
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/survey
+-- Set runtime path of "/home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/lib/uav_lenviz/survey" to ""
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_5.py
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_lenviz.py
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_3.py
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_4.py
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_1.py
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/launch/launch_uav_2.py
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/package_run_dependencies/uav_lenviz
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/parent_prefix_path/uav_lenviz
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/ament_prefix_path.sh
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/ament_prefix_path.dsv
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/path.sh
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/environment/path.dsv
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.bash
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.sh
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.zsh
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/local_setup.dsv
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/package.dsv
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/ament_index/resource_index/packages/uav_lenviz
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/cmake/uav_lenvizConfig.cmake
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/cmake/uav_lenvizConfig-version.cmake
+-- Installing: /home/manavendra/ros2_ws/src/uav_lenviz/install/uav_lenviz/share/uav_lenviz/package.xml

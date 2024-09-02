@@ -39,8 +39,8 @@ def generate_launch_description():
 
     return LaunchDescription([
         uav_1,
-        # uav_2,
-        # uav_3,
-        # uav_4,
-        # uav_5
+        uav_2,
+        uav_3,
+        uav_4,
+        uav_5
     ])

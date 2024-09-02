@@ -305,11 +305,10 @@ class MissionPlanning : public rclcpp::Node
             auto msg = std_msgs::msg::Int32MultiArray();
             msg.data = nodes;
 
-            // msg.layout.dim.size = path_len;
-            while(true)
-            {
+            // while(true)
+            // {
                 publisher_->publish(msg);
-            }
+            // }
         }
 
         rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_;
