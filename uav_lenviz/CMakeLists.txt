@@ -15,9 +15,14 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# set flags
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(Threads)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -34,15 +39,24 @@ if(BUILD_TESTING)
 endif()
 
 # Include Cpp "include" directory
-include_directories(include)
+include_directories(include/uav_lenviz)
 
 # Create Cpp executable
 add_executable(drone_operation src/drone_operation.cpp)
+add_executable(mission_plan src/mission_plan.cpp)
+add_executable(survey src/survey.cpp)
+
 ament_target_dependencies(drone_operation rclcpp)
+ament_target_dependencies(mission_plan rclcpp std_msgs)
+ament_target_dependencies(survey rclcpp std_msgs)
+
+target_link_libraries(mission_plan Threads::Threads)
 
 # Install Cpp executables
 install(TARGETS
   drone_operation
+  mission_plan
+  survey
   DESTINATION lib/${PROJECT_NAME}
 )
 

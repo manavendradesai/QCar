@@ -1,4 +1,4 @@
-// This class contains methods to navigate an unmanned aerial vehicle. The navigation commands include takeoff, survey, return-to-home, land, and failure.
+// This node class contains methods to navigate an unmanned aerial vehicle. The navigation commands include takeoff, survey, return-to-home, land, and failure.
 
 #include <memory>
 #include <cmath>
