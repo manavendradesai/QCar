@@ -3,6 +3,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch_ros.actions import Node
 
 
 def generate_launch_description():
@@ -39,8 +40,15 @@ def generate_launch_description():
 
     return LaunchDescription([
         uav_1,
-        # uav_2,
+        uav_2,
         # uav_3,
         # uav_4,
         # uav_5
+        
+        Node(
+            package = "uav_lenviz",
+            executable = "mux_drone_pos",
+            output = "screen",
+            emulate_tty = True
+        )
     ])

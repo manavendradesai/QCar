@@ -1,6 +1,8 @@
-// This node first creates a randomly weighted 2D graph for use in motion planning for a drone.
+// This node first creates a 2D graph for use in motion planning for a drone.
 
 // Then, this node applies Bidirectional A* to find a time optimal path from a source to a destination.
+
+// Instantaneous positions of the drones are received and added as obstacles to the graph for planning and obstacle avoidance
 
 // The code for Bi-A* is adapted from https://github.com/akshay-antony/BiDirectionalWeightedAstar/blob/main/src/main.cpp
 
@@ -13,6 +15,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/int32_multi_array.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
 
 using std::placeholders::_1;
 
@@ -22,39 +25,71 @@ class MissionPlanning : public rclcpp::Node
 
     public:
 
-        // Declare start and goal points, and ID, for the drone
+        // Declare variables
+        std::vector<double> drone_pos;
+        std::vector<std::pair<int,int>> input_obstacles;
+
+        std::pair<float,float> xy0;
         std::pair<float,float> start_point;
         std::pair<float,float> goal_point;
+        
         int drone_id;
+        int drone_num;
+        float crit_gap;
 
         std::vector<int> nodes;
         u_int32_t path_len;
+
+        std::vector<int> drone_obs;
 
         // Constructor
         MissionPlanning()
         : Node("mission_plan")
         {
 
-            // Declare parameters with defaults
-            this->declare_parameter("start_x",1);
-            this->declare_parameter("start_y",1);
-            this->declare_parameter("goal_x",30);
-            this->declare_parameter("goal_y",30);
-            this->declare_parameter("drone_id",0);
+            // Initialize variables
+            start_point = {1.0,1.0};
+            goal_point = {1.0,1.0};
+            drone_id = 0;
+            path_len = 0;
+            drone_num = 0;
+            crit_gap = 0.0;
 
-            // Retrive actual parameters
-            start_point.first = (this->get_parameter("start_x")).as_int();
-            start_point.second = (this->get_parameter("start_y")).as_int();
-            goal_point.first = (this->get_parameter("goal_x")).as_int();
-            goal_point.second = (this->get_parameter("goal_x")).as_int();
+            // Declare parameters
+            this->declare_parameter("start_x",1.0);
+            this->declare_parameter("start_y",1.0);
+            this->declare_parameter("goal_x",1.0);
+            this->declare_parameter("goal_y",1.0);
+            this->declare_parameter("drone_id",0);
+            this->declare_parameter("drone_num",0);
+            this->declare_parameter("crit_gap",0.0);
+
+            // Retrieve parameters.
+            start_point.first = (this->get_parameter("start_x")).as_double();
+            start_point.second = (this->get_parameter("start_y")).as_double();
+            goal_point.first = (this->get_parameter("goal_x")).as_double();
+            goal_point.second = (this->get_parameter("goal_y")).as_double();
             drone_id = (this->get_parameter("drone_id")).as_int();
+            drone_num = (this->get_parameter("drone_num")).as_int();
+            crit_gap = (this->get_parameter("crit_gap")).as_double();
+
+            // Prepare vector of ids of drones to be treated as obstacles
+            std::vector<int> num_drone(drone_num);
+            iota(num_drone.begin(), num_drone.end(), 1);
+            num_drone.erase(num_drone.begin() + drone_id - 1);
+            drone_obs = num_drone;
+
+            xy0 = start_point;   
+
+            auto default_qos = rclcpp::QoS(rclcpp::SystemDefaultsQoS());
 
             // Declare publisher for node path
             publisher_ = this->create_publisher<std_msgs::msg::Int32MultiArray>("node_path",10);
 
-            path_len = 0;
+            // Subscribe to drone positions
+            subscription_ = this->create_subscription<std_msgs::msg::Float64MultiArray>("/all_drone_positions",default_qos,std::bind(&MissionPlanning::set_drone_pos, this,_1));
 
-            // Plan mission path
+            // Trigger planner
             plan_mission();
 
         }
@@ -62,25 +97,66 @@ class MissionPlanning : public rclcpp::Node
 
     private:
 
+        // Callback to collect drone position and obstacle positions
+        void set_drone_pos(const std_msgs::msg::Float64MultiArray::SharedPtr msg)
+        {
+
+            drone_pos = msg->data;
+            split_pos(drone_pos);
+            
+        }
+
+        // Segregate drone and obstacle positions
+        void split_pos(std::vector<double> drone_pos)
+        {
+
+            // Drone position
+            xy0.first = drone_pos[2*drone_id-2];
+            xy0.second = drone_pos[2*drone_id-1];
+
+            // Real-time positions of other drones can be treated as occupied cells. Retrieve positions of other drones to add as obstacles. Convert to node. 
+            for (auto x: drone_obs)
+            {
+                input_obstacles.push_back({drone_pos[2*x-2], drone_pos[2*x-1]});
+            }
+
+            // Interdrone distance. Currently only for a two-drone task.
+            float gap = sqrt(pow((drone_pos[0]-drone_pos[2]),2) + pow((drone_pos[1]-drone_pos[3]),2));
+            std::cout<<"Inter drone distance..."<<gap<<"\n";
+
+            // Check for collision
+            if (gap>crit_gap)
+            {
+            // Plan mission path
+            plan_mission();
+            }
+            else
+            {
+            std::cout<<"Collision imminent!!!"<<"\n";
+            }
+
+        }
+
         int plan_mission()
         {
+
             // Start timing solve duration
             auto start_time = std::chrono::high_resolution_clock::now();
 
-            // Add occupied cells.
-            // Real-time positions of other drones can be treated as occupied cells
-            std::vector<std::pair<int,int>> input_obstacles;
-            input_obstacles.push_back({2, 2});
-            input_obstacles.push_back({2, 3});
+            // Point drone position to a node
+            start_point.first = ceil(xy0.first);
+            start_point.second = ceil(xy0.second);
 
+            // Add occupied cells.
+            // Add static obstacle.
+            input_obstacles.push_back({200, 200});
+            
             // Each cell of the map contains {x_cell, y_cell, f, h, g, is_occ}
             std::map<std::pair<float,float>,std::vector<float>> all_points_fwd, all_points_bwd;
 
             gp::pq open_points_fwd, open_points_bwd;
 
             std::set<std::pair<float,float>> closed_points_fwd, closed_points_bwd;
-
-            // bool found = false;
 
             // Convert map to graph
             make_graph(input_obstacles, all_points_fwd);
@@ -95,6 +171,7 @@ class MissionPlanning : public rclcpp::Node
             else if(!is_not_obstacle(start_point.first, start_point.second, all_points_fwd) 
                     || !is_not_obstacle(goal_point.first,goal_point.second, all_points_fwd)){
                 std::cout<<"\n Start or Goal Point is an obstacle...";
+                return 0;
             }
 
             all_points_fwd[start_point] = {start_point.first, start_point.second, 0., 0., 0., 0.};
@@ -113,6 +190,8 @@ class MissionPlanning : public rclcpp::Node
             t1.join();
             t2.join();
 
+            // std::cout<<"Created both threads..."<<"\n";
+
             if(gp::found)
                 trace_path(all_points_fwd, all_points_bwd);
             else
@@ -124,6 +203,13 @@ class MissionPlanning : public rclcpp::Node
             auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop_time-start_time);
             
             std::cout<<"Path planning time for drone "<<drone_id<<" (in milliseconds): "<<duration.count()<<std::endl;
+
+            // Reset Bi-A* variables for next planning iteration
+            gp::found = false;
+            gp::visited_fwd = {};
+            gp::visited_bwd = {};
+            nodes.clear();
+            input_obstacles.clear();
 
             return 0;
 
@@ -278,8 +364,6 @@ class MissionPlanning : public rclcpp::Node
 
                 std::cout<<"Solution path for "<<"drone "<<drone_id<<" ..."<<"\n";
 
-                // std::cout<<"Number of nodes for "<<"drone "<<path.size()<<" ..."<<"\n";
-
                 // Print node path chosen by Bi-A*
                 for(auto x: path)
                 {
@@ -290,8 +374,12 @@ class MissionPlanning : public rclcpp::Node
                     nodes.push_back(x.second);
                 }
 
-                // Store path length  at the end
+                // Store path length at the end
                 nodes.push_back(path_len);
+
+                // Store drone position at the end
+                nodes.push_back(xy0.first);
+                nodes.push_back(xy0.second);
 
             // Send plan to Survey
             send_to_survey();
@@ -305,11 +393,12 @@ class MissionPlanning : public rclcpp::Node
             auto msg = std_msgs::msg::Int32MultiArray();
             msg.data = nodes;
 
-            // while(true)
-            // {
-                publisher_->publish(msg);
-            // }
+            publisher_->publish(msg);
+
+            // std::cout<<"Sent"<<drone_id<<" position to survey..."<<"\n";
         }
+
+        rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr subscription_;
 
         rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr publisher_;
 

@@ -21,8 +21,8 @@
 namespace gp{
 
     // 1024 node map
-    float height = 32;
-    float width = 32;
+    float height = 500;
+    float width = 500;
     float w = 1;
 
     std::set<std::pair<float,float>> visited_fwd;

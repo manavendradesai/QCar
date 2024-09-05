@@ -21,11 +21,13 @@ def generate_launch_description():
             ## C++
             executable = "mission_plan",
             parameters = [
-                {"start_x" : 1},
-                {"start_y" : 1},
-                {"goal_x" : 30},
-                {"goal_y" : 30},
-                {"drone_id" : 1}
+                {"start_x" : 5.0},
+                {"start_y" : 5.0},
+                {"goal_x" : 200.0},
+                {"goal_y" : 5.0},
+                {"drone_id" : 1},
+                {"drone_num" : 2},
+                {"crit_gap" : 2.0}
             ],
             namespace = "uav_1",
             output = "screen",
@@ -39,7 +41,9 @@ def generate_launch_description():
             executable = "survey",
             parameters = [
                 {"v_max" : 15.0},
-                {"drone_id" : 1}
+                {"drone_id" : 1},
+                {"v" : 5.0},
+                {"dt" : 0.5}
             ],
             namespace = "uav_1",
             output = "screen",
